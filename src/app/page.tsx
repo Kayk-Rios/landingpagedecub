@@ -35,7 +35,7 @@ export default function Home() {
             <ImageEnfermeira2 />
           </div>
         </section>
-        <div className="mr-16">
+        <div className="mt-32">
           <Footer />
         </div>
       </div>
