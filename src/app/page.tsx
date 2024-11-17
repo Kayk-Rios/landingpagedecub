@@ -23,7 +23,7 @@ export default function Home() {
 
             <button className="flex justify-center items-center mt-14  corButao rounded-full">
               <a
-                href="https://wa.me/981699096"
+                href="https://wa.me/981699096?text=Desejo contratar os serviços do DecubTech"
                 target="_blank"
                 rel="noopener noreferrer"
               >
