@@ -4,7 +4,7 @@ import imagemInstagram from "@/assets/instagram.png";
 export default function Footer() {
   return (
     <>
-      <div className="flex flex-wrap justify-between items-center w-full px-4 py-6  text-white">
+      <div className="flex flex-wrap justify-between items-center w-full px-4 py-6  text-white footeer">
         <a>© 2024 DecubTech. Todos os direitos reservados.</a>
 
         <section className="flex flex-col items-start mt-4 md:mt-0">
