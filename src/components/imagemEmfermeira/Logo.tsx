@@ -8,7 +8,7 @@ export default function Logo() {
           src={Decub}
           width={50}
           height={50}
-          alt="ImagemDecubito"
+          alt="logo"
         />
       </a>
     </div>
