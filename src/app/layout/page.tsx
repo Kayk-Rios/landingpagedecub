@@ -1,5 +1,6 @@
 "use client"
 import Footer from "@/components/footer/footer";
+import NavBar from "@/components/nav/navbar2";
 import { useEffect, useState } from "react";
 
 export default function Sobre(){
@@ -24,7 +25,7 @@ export default function Sobre(){
       }, []);
     return(
         <>
-        
+         <NavBar/>
         <div className="flex  flex-col justify-center items-center mb-72">
         <div
                 className="pb-32"

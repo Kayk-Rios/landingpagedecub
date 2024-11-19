@@ -1,8 +1,8 @@
 'use client'
 import Footer from "@/components/footer/footer";
-import ImageEnfermeira2 from "@/components/imagemEmfermeira/ImageEnfermeira2";
+import ImageEnfermeira2 from "@/components/imagemEmfermeira/ImageEnfermeira";
+import NavBar from "@/components/nav/navbar";
 import { useEffect, useState } from 'react';
-
 
 export default function Home() {
  
@@ -56,10 +56,8 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col max-w-full mx-auto ">
-      <div className="relative ml-12 mb-3 text-white">
-          <a href="/layout">
-            <h1>Sobre</h1>
-          </a>
+      <div className="relative mb-3 text-white">
+        <NavBar/>
         </div>
         
         <div className="relative ml-12 text-white text-3xl font-bold">
