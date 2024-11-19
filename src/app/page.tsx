@@ -56,14 +56,18 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col max-w-full mx-auto ">
+      <div className="relative ml-12 mb-3 text-white">
+          <a href="/layout">
+            <h1>Sobre</h1>
+          </a>
+        </div>
+        
+        <div className="relative ml-12 text-white text-3xl font-bold">
+          <h1>{text}</h1>
+        </div>
         <section className="flex justify-between items-center mb-14">
+          
           <div className="flex flex-col pl-[50px] max-w-[680px]  ">
-            
-            <a href="/layout" className="pb-9 text-white">
-              <h1>Sobre</h1>
-            </a>
-         
-            <h1 className="text-white text-3xl font-bold" >{text}</h1>
             <iframe
               className=" flex sm:-w[300px] md:w-[500px] lg:w-[650px] "
               height="415"
@@ -85,7 +89,7 @@ export default function Home() {
               </a>
             </button>
           </div>
-          <div>
+          <div className=" mt-[-70px]">
             <ImageEnfermeira2 />
           </div>
         </section>
