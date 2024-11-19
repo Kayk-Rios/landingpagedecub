@@ -1,10 +1,58 @@
 'use client'
 import Footer from "@/components/footer/footer";
 import ImageEnfermeira2 from "@/components/imagemEmfermeira/ImageEnfermeira2";
-import { useEffect, useState } from "react";
-import Typewriter from 'react-typewriter-effect';
+import { useEffect, useState } from 'react';
+
 
 export default function Home() {
+ 
+  const [text, setText] = useState(""); 
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false); 
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+
+  const phrases = [
+    "Decubtech",
+    "Seu tempo é precioso, invista nele"
+  ];
+
+  useEffect(() => {
+    let interval:any;
+
+    if (!isPaused) {
+      interval = setInterval(() => {
+        const currentPhrase = phrases[currentTextIndex];
+
+        if (isDeleting) {
+          setText((prevText) => prevText.slice(0, prevText.length - 1));
+          if (text.length === 0) {
+            setIsDeleting(false); 
+            setIndex(0); 
+            setIsPaused(true); // Pausa por 5 segundos após apagar
+            setTimeout(() => {
+              setIsPaused(false); 
+              setCurrentTextIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+            }, 2000); // Pausa por 5 segundos
+          }
+        } else {
+          setText((prevText) => prevText + currentPhrase[index]);
+          if (index === currentPhrase.length - 1) {
+            setIsDeleting(true); 
+            setIsPaused(true); 
+            setTimeout(() => {
+              setIsPaused(false); 
+            }, 5000); // Pausa por 5 segundos
+          } else {
+            setIndex(index + 1);
+          }
+        }
+      }, 100);
+    }
+
+    return () => clearInterval(interval); 
+  }, [text, isDeleting, index, isPaused, currentTextIndex, phrases]); 
+
   return (
     <>
       <div className="flex flex-col max-w-full mx-auto ">
@@ -14,23 +62,8 @@ export default function Home() {
             <a href="/layout" className="pb-9 text-white">
               <h1>Sobre</h1>
             </a>
-              <Typewriter
-                textStyle={{
-                  fontFamily: "Exo 2",
-                  fontWeight: 600,
-                  fontSize: "2.2em",
-                  maxWidth: "90%",
-                  color: "#fff",
-                  overflow: "hidden",
-                }}
-                startDelay={200}
-                cursorColor="black"
-                multiText={["Decubtech", "Seu tempo é precioso, invista nele", "O Decubtech faz intervenções precisas, reduzindo riscos de lesões por pressão."]}
-                multiTextDelay={1000}
-                typeSpeed={100}
-                loop={true}
-              />
-    
+         
+            <h1 className="text-white text-3xl font-bold" >{text}</h1>
             <iframe
               className=" flex sm:-w[300px] md:w-[500px] lg:w-[650px] "
               height="415"
