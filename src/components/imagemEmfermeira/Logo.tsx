@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Decub from "@/assets/logoDecub.png";
+import Decub from "@/assets/logo1.jpg";
 export default function Logo() {
   return (
     <div className="mr-[200px] ">
