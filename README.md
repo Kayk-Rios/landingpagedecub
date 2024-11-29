@@ -1,6 +1,11 @@
 Repositorio Front-End : https://github.com/Kayk-Rios/Decubtech-Front-End
 
 Repositorio Back-End : https://github.com/Kayk-Rios/back_end_decubtech 
+
+landingpage : https://landingpagedecub.netlify.app/ 
+
+Site: https://decubtech.site/ 
+
 ## Para rodar projeto localmente
 
 ```bash
